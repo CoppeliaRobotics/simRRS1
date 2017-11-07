@@ -1,0 +1,19 @@
+Copyright 2006-2017 Coppelia Robotics GmbH. All rights reserved. 
+
+This interface plugin is licensed under the terms of GNU GPL:
+
+-------------------------------------------------------------------
+This plugin is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+THIS PLUGIN IS DISTRIBUTED "AS IS", WITHOUT ANY EXPRESS OR IMPLIED
+WARRANTY. THE USER WILL USE IT AT HIS/HER OWN RISK. THE ORIGINAL
+AUTHORS AND COPPELIA ROBOTICS GMBH WILL NOT BE LIABLE FOR DATA LOSS,
+DAMAGES, LOSS OF PROFITS OR ANY OTHER KIND OF LOSS WHILE USING OR
+MISUSING THIS SOFTWARE.
+
+See the GNU General Public License for more details.
+<http://www.gnu.org/licenses/>.
+-------------------------------------------------------------------
