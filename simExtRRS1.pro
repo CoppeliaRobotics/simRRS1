@@ -3,7 +3,7 @@ include(config.pri)
 #QT -= core #core needed because of QProcess::startDetached
 QT -= gui
 
-TARGET = v_repExtRRS1
+TARGET = simExtRRS1
 TEMPLATE = lib
 
 DEFINES -= UNICODE
@@ -38,35 +38,35 @@ INCLUDEPATH += "../include"
 INCLUDEPATH += $$BOOST_INCLUDEPATH
 
 win32 {
-    DEFINES += WIN_VREP
+    DEFINES += WIN_SIM
     LIBS += -lwinmm
     LIBS += -lWs2_32
     LIBS += -lShell32
 }
 
 macx {
-    DEFINES += MAC_VREP
+    DEFINES += MAC_SIM
 }
 
 unix:!macx {
-    DEFINES += LIN_VREP
+    DEFINES += LIN_SIM
 }
 
 SOURCES += \
     ../common/socketOutConnection.cpp \
     ../common/scriptFunctionData.cpp \
     ../common/scriptFunctionDataItem.cpp \
-    ../common/v_repLib.cpp \
+    ../common/simLib.cpp \
     inputOutputBlock.cpp \
-    v_repExtRRS1.cpp
+    simExtRRS1.cpp
 
 HEADERS +=\
     ../include/socketOutConnection.h \
     ../include/scriptFunctionData.h \
     ../include/scriptFunctionDataItem.h \
-    ../include/v_repLib.h \
+    ../include/simLib.h \
     inputOutputBlock.h \
-    v_repExtRRS1.h
+    simExtRRS1.h
 
 unix:!symbian {
     maemo5 {
