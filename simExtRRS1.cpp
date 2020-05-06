@@ -29,7 +29,7 @@
 #define CONCAT(x,y,z) x y z
 #define strConCat(x,y,z)    CONCAT(x,y,z)
 
-LIBRARY simLib;
+static LIBRARY simLib;
 
 struct sRcsServer
 {
@@ -39,9 +39,22 @@ struct sRcsServer
     bool isCurrentServer;
 };
 
-std::vector<sRcsServer> allRcsServers;
-int nextRcsServerHandle=0;
-std::string currentDirAndPath;
+static std::vector<sRcsServer> allRcsServers;
+static int nextRcsServerHandle=0;
+static std::string currentDirAndPath;
+
+bool canOutputMsg(int msgType)
+{
+    int plugin_verbosity = sim_verbosity_default;
+    simGetModuleInfo("RRS1",sim_moduleinfo_verbosity,nullptr,&plugin_verbosity);
+    return(plugin_verbosity>=msgType);
+}
+
+void outputMsg(int msgType,const char* msg)
+{
+    if (canOutputMsg(msgType))
+        printf("%s\n",msg);
+}
 
 int getServerIndexFromServerHandle(int serverHandle)
 {
@@ -4656,23 +4669,12 @@ SIM_DLLEXPORT unsigned char simStart(void* reservedPointer,int reservedInt)
     simLib=loadSimLibrary(temp.c_str());
     if (simLib==NULL)
     {
-        std::cout << "Error, could not find or correctly load the CoppeliaSim library. Cannot start 'RRS1' plugin.\n";
+        outputMsg(sim_verbosity_errors,"simExtRRS1 plugin error: could not find or correctly load the CoppeliaSim library. Cannot start 'RRS1' plugin.");
         return(0); 
     }
     if (getSimProcAddresses(simLib)==0)
     {
-        std::cout << "Error, could not find all required functions in the CoppeliaSim library. Cannot start 'RRS1' plugin.\n";
-        unloadSimLibrary(simLib);
-        return(0);
-    }
-
-    // Check the version of CoppeliaSim:
-    int simVer,simRev;
-    simGetIntegerParameter(sim_intparam_program_version,&simVer);
-    simGetIntegerParameter(sim_intparam_program_revision,&simRev);
-    if( (simVer<30400) || ((simVer==30400)&&(simRev<9)) )
-    {
-        std::cout << "Sorry, your CoppeliaSim copy is somewhat old, CoppeliaSim 3.4.0 rev9 or higher is required. Cannot start 'RRS1' plugin.\n";
+        outputMsg(sim_verbosity_errors,"simExtRRS1 plugin error: could not find all required functions in the CoppeliaSim library. Cannot start 'RRS1' plugin.");
         unloadSimLibrary(simLib);
         return(0);
     }
