@@ -4669,12 +4669,12 @@ SIM_DLLEXPORT unsigned char simStart(void* reservedPointer,int reservedInt)
     simLib=loadSimLibrary(temp.c_str());
     if (simLib==NULL)
     {
-        outputMsg(sim_verbosity_errors,"simExtRRS1 plugin error: could not find or correctly load the CoppeliaSim library. Cannot start 'RRS1' plugin.");
+        outputMsg(sim_verbosity_errors,"simExtRRS1: error: could not find or correctly load the CoppeliaSim library. Cannot start 'RRS1' plugin.");
         return(0); 
     }
     if (getSimProcAddresses(simLib)==0)
     {
-        outputMsg(sim_verbosity_errors,"simExtRRS1 plugin error: could not find all required functions in the CoppeliaSim library. Cannot start 'RRS1' plugin.");
+        outputMsg(sim_verbosity_errors,"simExtRRS1: error: could not find all required functions in the CoppeliaSim library. Cannot start 'RRS1' plugin.");
         unloadSimLibrary(simLib);
         return(0);
     }
