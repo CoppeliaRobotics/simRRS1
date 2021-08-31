@@ -4666,8 +4666,6 @@ SIM_DLLEXPORT unsigned char simStart(void* reservedPointer,int reservedInt)
         return(0);
     }
 
-    simRegisterScriptVariable("simRRS1","require('simExtRRS1')",0);
-
     // startRcsModule (auxiliary command)
     simRegisterScriptCallbackFunction(strConCat(LUA_START_RCS_SERVER_COMMAND,"@","RRS1"),strConCat("number rcsServerHandle=",LUA_START_RCS_SERVER_COMMAND,"(string rcsLibraryFilename,string rcsLibraryFunctionName,int portNumber)"),LUA_START_RCS_SERVER_CALLBACK);
 
