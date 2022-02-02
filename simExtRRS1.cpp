@@ -4667,205 +4667,205 @@ SIM_DLLEXPORT unsigned char simStart(void* reservedPointer,int reservedInt)
     }
 
     // startRcsModule (auxiliary command)
-    simRegisterScriptCallbackFunction(strConCat(LUA_START_RCS_SERVER_COMMAND,"@","RRS1"),strConCat("number rcsServerHandle=",LUA_START_RCS_SERVER_COMMAND,"(string rcsLibraryFilename,string rcsLibraryFunctionName,int portNumber)"),LUA_START_RCS_SERVER_CALLBACK);
+    simRegisterScriptCallbackFunction(strConCat(LUA_START_RCS_SERVER_COMMAND,"@","RRS1"),strConCat("int rcsServerHandle=",LUA_START_RCS_SERVER_COMMAND,"(string rcsLibraryFilename,string rcsLibraryFunctionName,int portNumber)"),LUA_START_RCS_SERVER_CALLBACK);
 
     // selectRcsModule (auxiliary command)
-    simRegisterScriptCallbackFunction(strConCat(LUA_SELECT_RCS_SERVER_COMMAND,"@","RRS1"),strConCat("boolean result=",LUA_SELECT_RCS_SERVER_COMMAND,"(number rcsServerHandle)"),LUA_SELECT_RCS_SERVER_CALLBACK);
+    simRegisterScriptCallbackFunction(strConCat(LUA_SELECT_RCS_SERVER_COMMAND,"@","RRS1"),strConCat("bool result=",LUA_SELECT_RCS_SERVER_COMMAND,"(int rcsServerHandle)"),LUA_SELECT_RCS_SERVER_CALLBACK);
 
     // stopRcsModule (auxiliary command)
-    simRegisterScriptCallbackFunction(strConCat(LUA_STOP_RCS_SERVER_COMMAND,"@","RRS1"),strConCat("boolean result=",LUA_STOP_RCS_SERVER_COMMAND,"(number rcsServerHandle)"),LUA_STOP_RCS_SERVER_CALLBACK);
+    simRegisterScriptCallbackFunction(strConCat(LUA_STOP_RCS_SERVER_COMMAND,"@","RRS1"),strConCat("bool result=",LUA_STOP_RCS_SERVER_COMMAND,"(int rcsServerHandle)"),LUA_STOP_RCS_SERVER_CALLBACK);
 
     // INITIALIZE
-    simRegisterScriptCallbackFunction(strConCat(LUA_INITIALIZE_COMMAND,"@","RRS1"),strConCat("int status,bitstring2 rcsHandle,int rcsRrsVersion,int rcsVersion,int numberOfMessages=",LUA_INITIALIZE_COMMAND,"(int robotNumber,string robotPathName,string modulePathName,string manipulatorType,int CarrrsVersion,int debug)"),LUA_INITIALIZE_CALLBACK);
+    simRegisterScriptCallbackFunction(strConCat(LUA_INITIALIZE_COMMAND,"@","RRS1"),strConCat("int status,buffer rcsHandle,int rcsRrsVersion,int rcsVersion,int numberOfMessages=",LUA_INITIALIZE_COMMAND,"(int robotNumber,string robotPathName,string modulePathName,string manipulatorType,int CarrrsVersion,int debug)"),LUA_INITIALIZE_CALLBACK);
 
     // RESET
-    simRegisterScriptCallbackFunction(strConCat(LUA_RESET_COMMAND,"@","RRS1"),strConCat("int status,int numberOfMessages=",LUA_RESET_COMMAND,"(bitstring2 rcsHandle,int resetLevel)"),LUA_RESET_CALLBACK);
+    simRegisterScriptCallbackFunction(strConCat(LUA_RESET_COMMAND,"@","RRS1"),strConCat("int status,int numberOfMessages=",LUA_RESET_COMMAND,"(buffer rcsHandle,int resetLevel)"),LUA_RESET_CALLBACK);
 
     // TERMINATE
-    simRegisterScriptCallbackFunction(strConCat(LUA_TERMINATE_COMMAND,"@","RRS1"),strConCat("int status=",LUA_TERMINATE_COMMAND,"(bitstring2 rcsHandle)"),LUA_TERMINATE_CALLBACK);
+    simRegisterScriptCallbackFunction(strConCat(LUA_TERMINATE_COMMAND,"@","RRS1"),strConCat("int status=",LUA_TERMINATE_COMMAND,"(buffer rcsHandle)"),LUA_TERMINATE_CALLBACK);
 
     // GET_ROBOT_STAMP
-    simRegisterScriptCallbackFunction(strConCat(LUA_GET_ROBOT_STAMP_COMMAND,"@","RRS1"),strConCat("int status,string manipulator,string controller,string software=",LUA_GET_ROBOT_STAMP_COMMAND,"(bitstring2 rcsHandle)"),LUA_GET_ROBOT_STAMP_CALLBACK);
+    simRegisterScriptCallbackFunction(strConCat(LUA_GET_ROBOT_STAMP_COMMAND,"@","RRS1"),strConCat("int status,string manipulator,string controller,string software=",LUA_GET_ROBOT_STAMP_COMMAND,"(buffer rcsHandle)"),LUA_GET_ROBOT_STAMP_CALLBACK);
 
     // GET_HOME_JOINT_POSITION
-    simRegisterScriptCallbackFunction(strConCat(LUA_GET_HOME_JOINT_POSITION_COMMAND,"@","RRS1"),strConCat("int status,jointPosType homePosition=",LUA_GET_HOME_JOINT_POSITION_COMMAND,"(bitstring2 rcsHandle)"),LUA_GET_HOME_JOINT_POSITION_CALLBACK);
+    simRegisterScriptCallbackFunction(strConCat(LUA_GET_HOME_JOINT_POSITION_COMMAND,"@","RRS1"),strConCat("int status,jointPosType homePosition=",LUA_GET_HOME_JOINT_POSITION_COMMAND,"(buffer rcsHandle)"),LUA_GET_HOME_JOINT_POSITION_CALLBACK);
 
     // GET_RCS_DATA
-    simRegisterScriptCallbackFunction(strConCat(LUA_GET_RCS_DATA_COMMAND,"@","RRS1"),strConCat("int status,string paramId,string paramContents,int permission=",LUA_GET_RCS_DATA_COMMAND,"(bitstring2 rcsHandle,int storage,int firstNext,string paramId)"),LUA_GET_RCS_DATA_CALLBACK);
+    simRegisterScriptCallbackFunction(strConCat(LUA_GET_RCS_DATA_COMMAND,"@","RRS1"),strConCat("int status,string paramId,string paramContents,int permission=",LUA_GET_RCS_DATA_COMMAND,"(buffer rcsHandle,int storage,int firstNext,string paramId)"),LUA_GET_RCS_DATA_CALLBACK);
 
     // MODIFY_RCS_DATA
-    simRegisterScriptCallbackFunction(strConCat(LUA_MODIFY_RCS_DATA_COMMAND,"@","RRS1"),strConCat("int status=",LUA_MODIFY_RCS_DATA_COMMAND,"(bitstring2 rcsHandle,int storage,string paramId,string paramContents)"),LUA_MODIFY_RCS_DATA_CALLBACK);
+    simRegisterScriptCallbackFunction(strConCat(LUA_MODIFY_RCS_DATA_COMMAND,"@","RRS1"),strConCat("int status=",LUA_MODIFY_RCS_DATA_COMMAND,"(buffer rcsHandle,int storage,string paramId,string paramContents)"),LUA_MODIFY_RCS_DATA_CALLBACK);
 
     // SAVE_RCS_DATA
-    simRegisterScriptCallbackFunction(strConCat(LUA_SAVE_RCS_DATA_COMMAND,"@","RRS1"),strConCat("int status=",LUA_SAVE_RCS_DATA_COMMAND,"(bitstring2 rcsHandle)"),LUA_SAVE_RCS_DATA_CALLBACK);
+    simRegisterScriptCallbackFunction(strConCat(LUA_SAVE_RCS_DATA_COMMAND,"@","RRS1"),strConCat("int status=",LUA_SAVE_RCS_DATA_COMMAND,"(buffer rcsHandle)"),LUA_SAVE_RCS_DATA_CALLBACK);
 
     // LOAD_RCS_DATA
-    simRegisterScriptCallbackFunction(strConCat(LUA_LOAD_RCS_DATA_COMMAND,"@","RRS1"),strConCat("int status,int numberOfMessages=",LUA_LOAD_RCS_DATA_COMMAND,"(bitstring2 rcsHandle)"),LUA_LOAD_RCS_DATA_CALLBACK);
+    simRegisterScriptCallbackFunction(strConCat(LUA_LOAD_RCS_DATA_COMMAND,"@","RRS1"),strConCat("int status,int numberOfMessages=",LUA_LOAD_RCS_DATA_COMMAND,"(buffer rcsHandle)"),LUA_LOAD_RCS_DATA_CALLBACK);
 
     // GET_INVERSE_KINEMATIC
-    simRegisterScriptCallbackFunction(strConCat(LUA_GET_INVERSE_KINEMATIC_COMMAND,"@","RRS1"),strConCat("int status,jointPosType jointPos,bitString jointLimit,int numberOfMessages=",LUA_GET_INVERSE_KINEMATIC_COMMAND,"(bitstring2 rcsHandle,cartPosType cartPos,jointPosType jointPos,string configuration,bitstring outputFormat)"),LUA_GET_INVERSE_KINEMATIC_CALLBACK);
+    simRegisterScriptCallbackFunction(strConCat(LUA_GET_INVERSE_KINEMATIC_COMMAND,"@","RRS1"),strConCat("int status,jointPosType jointPos,bitString jointLimit,int numberOfMessages=",LUA_GET_INVERSE_KINEMATIC_COMMAND,"(buffer rcsHandle,cartPosType cartPos,jointPosType jointPos,string configuration,buffer outputFormat)"),LUA_GET_INVERSE_KINEMATIC_CALLBACK);
 
     // GET_FORWARD_KINEMATIC
-    simRegisterScriptCallbackFunction(strConCat(LUA_GET_FORWARD_KINEMATIC_COMMAND,"@","RRS1"),strConCat("int status,cartPosType cartPos,jointPosType jointPos,string configuration,bitString jointLimit,int numberOfMessages=",LUA_GET_FORWARD_KINEMATIC_COMMAND,"(bitstring2 rcsHandle,jointPosType jointPos)"),LUA_GET_FORWARD_KINEMATIC_CALLBACK);
+    simRegisterScriptCallbackFunction(strConCat(LUA_GET_FORWARD_KINEMATIC_COMMAND,"@","RRS1"),strConCat("int status,cartPosType cartPos,jointPosType jointPos,string configuration,bitString jointLimit,int numberOfMessages=",LUA_GET_FORWARD_KINEMATIC_COMMAND,"(buffer rcsHandle,jointPosType jointPos)"),LUA_GET_FORWARD_KINEMATIC_CALLBACK);
 
     // MATRIX_TO_CONTROLLER_POSITION
-    simRegisterScriptCallbackFunction(strConCat(LUA_MATRIX_TO_CONTROLLER_POSITION_COMMAND,"@","RRS1"),strConCat("int status,string contrPos=",LUA_MATRIX_TO_CONTROLLER_POSITION_COMMAND,"(bitstring2 rcsHandle,cartPosType cartPos,string configuration)"),LUA_MATRIX_TO_CONTROLLER_POSITION_CALLBACK);
+    simRegisterScriptCallbackFunction(strConCat(LUA_MATRIX_TO_CONTROLLER_POSITION_COMMAND,"@","RRS1"),strConCat("int status,string contrPos=",LUA_MATRIX_TO_CONTROLLER_POSITION_COMMAND,"(buffer rcsHandle,cartPosType cartPos,string configuration)"),LUA_MATRIX_TO_CONTROLLER_POSITION_CALLBACK);
 
     // CONTROLLER_POSITION_TO_MATRIX
-    simRegisterScriptCallbackFunction(strConCat(LUA_CONTROLLER_POSITION_TO_MATRIX_COMMAND,"@","RRS1"),strConCat("int status,cartPosType cartPos,string configuration=",LUA_CONTROLLER_POSITION_TO_MATRIX_COMMAND,"(bitstring2 rcsHandle,string contrPos)"),LUA_CONTROLLER_POSITION_TO_MATRIX_CALLBACK);
+    simRegisterScriptCallbackFunction(strConCat(LUA_CONTROLLER_POSITION_TO_MATRIX_COMMAND,"@","RRS1"),strConCat("int status,cartPosType cartPos,string configuration=",LUA_CONTROLLER_POSITION_TO_MATRIX_COMMAND,"(buffer rcsHandle,string contrPos)"),LUA_CONTROLLER_POSITION_TO_MATRIX_CALLBACK);
 
     // GET_CELL_FRAME
-    simRegisterScriptCallbackFunction(strConCat(LUA_GET_CELL_FRAME_COMMAND,"@","RRS1"),strConCat("int status,string frameId,int frameType,string relativeToId,bitstring jointNumber,frame frameData=",LUA_GET_CELL_FRAME_COMMAND,"(bitstring2 rcsHandle,int storage,int firstNext,string frameId)"),LUA_GET_CELL_FRAME_CALLBACK);
+    simRegisterScriptCallbackFunction(strConCat(LUA_GET_CELL_FRAME_COMMAND,"@","RRS1"),strConCat("int status,string frameId,int frameType,string relativeToId,buffer jointNumber,frame frameData=",LUA_GET_CELL_FRAME_COMMAND,"(buffer rcsHandle,int storage,int firstNext,string frameId)"),LUA_GET_CELL_FRAME_CALLBACK);
 
     // MODIFY_CELL_FRAME
-    simRegisterScriptCallbackFunction(strConCat(LUA_MODIFY_CELL_FRAME_COMMAND,"@","RRS1"),strConCat("int status=",LUA_MODIFY_CELL_FRAME_COMMAND,"(bitstring2 rcsHandle,int storage,string frameId,frame frameData)"),LUA_MODIFY_CELL_FRAME_CALLBACK);
+    simRegisterScriptCallbackFunction(strConCat(LUA_MODIFY_CELL_FRAME_COMMAND,"@","RRS1"),strConCat("int status=",LUA_MODIFY_CELL_FRAME_COMMAND,"(buffer rcsHandle,int storage,string frameId,frame frameData)"),LUA_MODIFY_CELL_FRAME_CALLBACK);
 
     // SELECT_WORK_FRAMES
-    simRegisterScriptCallbackFunction(strConCat(LUA_SELECT_WORK_FRAMES_COMMAND,"@","RRS1"),strConCat("int status=",LUA_SELECT_WORK_FRAMES_COMMAND,"(bitstring2 rcsHandle,string toolId,string objectId)"),LUA_SELECT_WORK_FRAMES_CALLBACK);
+    simRegisterScriptCallbackFunction(strConCat(LUA_SELECT_WORK_FRAMES_COMMAND,"@","RRS1"),strConCat("int status=",LUA_SELECT_WORK_FRAMES_COMMAND,"(buffer rcsHandle,string toolId,string objectId)"),LUA_SELECT_WORK_FRAMES_CALLBACK);
 
     // SET_INITIAL_POSITION
-    simRegisterScriptCallbackFunction(strConCat(LUA_SET_INITIAL_POSITION_COMMAND,"@","RRS1"),strConCat("int status,bitstring jointLimit=",LUA_SET_INITIAL_POSITION_COMMAND,"(bitstring2 rcsHandle,cartPosType cartPos,jointPosType jointPos,string configuration)"),LUA_SET_INITIAL_POSITION_CALLBACK);
+    simRegisterScriptCallbackFunction(strConCat(LUA_SET_INITIAL_POSITION_COMMAND,"@","RRS1"),strConCat("int status,buffer jointLimit=",LUA_SET_INITIAL_POSITION_COMMAND,"(buffer rcsHandle,cartPosType cartPos,jointPosType jointPos,string configuration)"),LUA_SET_INITIAL_POSITION_CALLBACK);
 
     // SET_NEXT_TARGET
-    simRegisterScriptCallbackFunction(strConCat(LUA_SET_NEXT_TARGET_COMMAND,"@","RRS1"),strConCat("int status=",LUA_SET_NEXT_TARGET_COMMAND,"(bitstring2 rcsHandle,int targetId,int targetParam,cartPosType cartPos,jointPosType jointPos,string configuration,real targetParamValue)"),LUA_SET_NEXT_TARGET_CALLBACK);
+    simRegisterScriptCallbackFunction(strConCat(LUA_SET_NEXT_TARGET_COMMAND,"@","RRS1"),strConCat("int status=",LUA_SET_NEXT_TARGET_COMMAND,"(buffer rcsHandle,int targetId,int targetParam,cartPosType cartPos,jointPosType jointPos,string configuration,float targetParamValue)"),LUA_SET_NEXT_TARGET_CALLBACK);
 
     // GET_NEXT_STEP
-    simRegisterScriptCallbackFunction(strConCat(LUA_GET_NEXT_STEP_COMMAND,"@","RRS1"),strConCat("int status,cartPosType cartPos,jointPosType jointPos,string configuration,real elapsedTime,bitstring jointLimit,int numberOfEvents,int numberOfMessages=",LUA_GET_NEXT_STEP_COMMAND,"(bitstring2 rcsHandle,bitstring outputFormat)"),LUA_GET_NEXT_STEP_CALLBACK);
+    simRegisterScriptCallbackFunction(strConCat(LUA_GET_NEXT_STEP_COMMAND,"@","RRS1"),strConCat("int status,cartPosType cartPos,jointPosType jointPos,string configuration,float elapsedTime,buffer jointLimit,int numberOfEvents,int numberOfMessages=",LUA_GET_NEXT_STEP_COMMAND,"(buffer rcsHandle,buffer outputFormat)"),LUA_GET_NEXT_STEP_CALLBACK);
 
     // SET_INTERPOLATION_TIME
-    simRegisterScriptCallbackFunction(strConCat(LUA_SET_INTERPOLATION_TIME_COMMAND,"@","RRS1"),strConCat("int status=",LUA_SET_INTERPOLATION_TIME_COMMAND,"(bitstring2 rcsHandle,real interpolationTime)"),LUA_SET_INTERPOLATION_TIME_CALLBACK);
+    simRegisterScriptCallbackFunction(strConCat(LUA_SET_INTERPOLATION_TIME_COMMAND,"@","RRS1"),strConCat("int status=",LUA_SET_INTERPOLATION_TIME_COMMAND,"(buffer rcsHandle,float interpolationTime)"),LUA_SET_INTERPOLATION_TIME_CALLBACK);
 
     // SELECT_MOTION_TYPE
-    simRegisterScriptCallbackFunction(strConCat(LUA_SELECT_MOTION_TYPE_COMMAND,"@","RRS1"),strConCat("int status=",LUA_SELECT_MOTION_TYPE_COMMAND,"(bitstring2 rcsHandle,int motionType)"),LUA_SELECT_MOTION_TYPE_CALLBACK);
+    simRegisterScriptCallbackFunction(strConCat(LUA_SELECT_MOTION_TYPE_COMMAND,"@","RRS1"),strConCat("int status=",LUA_SELECT_MOTION_TYPE_COMMAND,"(buffer rcsHandle,int motionType)"),LUA_SELECT_MOTION_TYPE_CALLBACK);
 
     // SELECT_TARGET_TYPE
-    simRegisterScriptCallbackFunction(strConCat(LUA_SELECT_TARGET_TYPE_COMMAND,"@","RRS1"),strConCat("int status=",LUA_SELECT_TARGET_TYPE_COMMAND,"(bitstring2 rcsHandle,int targetType,cartPosType cartPos,jointPosType jointPos,string configuration)"),LUA_SELECT_TARGET_TYPE_CALLBACK);
+    simRegisterScriptCallbackFunction(strConCat(LUA_SELECT_TARGET_TYPE_COMMAND,"@","RRS1"),strConCat("int status=",LUA_SELECT_TARGET_TYPE_COMMAND,"(buffer rcsHandle,int targetType,cartPosType cartPos,jointPosType jointPos,string configuration)"),LUA_SELECT_TARGET_TYPE_CALLBACK);
 
     // SELECT_TRAJECTORY_MODE
-    simRegisterScriptCallbackFunction(strConCat(LUA_SELECT_TRAJECTORY_MODE_COMMAND,"@","RRS1"),strConCat("int status=",LUA_SELECT_TRAJECTORY_MODE_COMMAND,"(bitstring2 rcsHandle,int trajectoryOn)"),LUA_SELECT_TRAJECTORY_MODE_CALLBACK);
+    simRegisterScriptCallbackFunction(strConCat(LUA_SELECT_TRAJECTORY_MODE_COMMAND,"@","RRS1"),strConCat("int status=",LUA_SELECT_TRAJECTORY_MODE_COMMAND,"(buffer rcsHandle,int trajectoryOn)"),LUA_SELECT_TRAJECTORY_MODE_CALLBACK);
 
     // SELECT_ORIENTATION_INTERPOLATION_MODE
-    simRegisterScriptCallbackFunction(strConCat(LUA_SELECT_ORIENTATION_INTERPOLATION_MODE_COMMAND,"@","RRS1"),strConCat("int status=",LUA_SELECT_ORIENTATION_INTERPOLATION_MODE_COMMAND,"(bitstring2 rcsHandle,int interpolationMode,int oriConst)"),LUA_SELECT_ORIENTATION_INTERPOLATION_MODE_CALLBACK);
+    simRegisterScriptCallbackFunction(strConCat(LUA_SELECT_ORIENTATION_INTERPOLATION_MODE_COMMAND,"@","RRS1"),strConCat("int status=",LUA_SELECT_ORIENTATION_INTERPOLATION_MODE_COMMAND,"(buffer rcsHandle,int interpolationMode,int oriConst)"),LUA_SELECT_ORIENTATION_INTERPOLATION_MODE_CALLBACK);
 
     // SELECT_DOMINANT_INTERPOLATION
-    simRegisterScriptCallbackFunction(strConCat(LUA_SELECT_DOMINANT_INTERPOLATION_COMMAND,"@","RRS1"),strConCat("int status=",LUA_SELECT_DOMINANT_INTERPOLATION_COMMAND,"(bitstring2 rcsHandle,int dominantIntType,int dominantIntParam)"),LUA_SELECT_DOMINANT_INTERPOLATION_CALLBACK);
+    simRegisterScriptCallbackFunction(strConCat(LUA_SELECT_DOMINANT_INTERPOLATION_COMMAND,"@","RRS1"),strConCat("int status=",LUA_SELECT_DOMINANT_INTERPOLATION_COMMAND,"(buffer rcsHandle,int dominantIntType,int dominantIntParam)"),LUA_SELECT_DOMINANT_INTERPOLATION_CALLBACK);
 
     // SET_ADVANCE_MOTION
-    simRegisterScriptCallbackFunction(strConCat(LUA_SET_ADVANCE_MOTION_COMMAND,"@","RRS1"),strConCat("int status=",LUA_SET_ADVANCE_MOTION_COMMAND,"(bitstring2 rcsHandle,int numberOfMotion)"),LUA_SET_ADVANCE_MOTION_CALLBACK);
+    simRegisterScriptCallbackFunction(strConCat(LUA_SET_ADVANCE_MOTION_COMMAND,"@","RRS1"),strConCat("int status=",LUA_SET_ADVANCE_MOTION_COMMAND,"(buffer rcsHandle,int numberOfMotion)"),LUA_SET_ADVANCE_MOTION_CALLBACK);
 
     // SET_MOTION_FILTER
-    simRegisterScriptCallbackFunction(strConCat(LUA_SET_MOTION_FILTER_COMMAND,"@","RRS1"),strConCat("int status=",LUA_SET_MOTION_FILTER_COMMAND,"(bitstring2 rcsHandle,int filterFactor)"),LUA_SET_MOTION_FILTER_CALLBACK);
+    simRegisterScriptCallbackFunction(strConCat(LUA_SET_MOTION_FILTER_COMMAND,"@","RRS1"),strConCat("int status=",LUA_SET_MOTION_FILTER_COMMAND,"(buffer rcsHandle,int filterFactor)"),LUA_SET_MOTION_FILTER_CALLBACK);
 
     // SET_OVERRIDE_POSITION
-    simRegisterScriptCallbackFunction(strConCat(LUA_SET_OVERRIDE_POSITION_COMMAND,"@","RRS1"),strConCat("int status=",LUA_SET_OVERRIDE_POSITION_COMMAND,"(bitstring2 rcsHandle,frame posOffset)"),LUA_SET_OVERRIDE_POSITION_CALLBACK);
+    simRegisterScriptCallbackFunction(strConCat(LUA_SET_OVERRIDE_POSITION_COMMAND,"@","RRS1"),strConCat("int status=",LUA_SET_OVERRIDE_POSITION_COMMAND,"(buffer rcsHandle,frame posOffset)"),LUA_SET_OVERRIDE_POSITION_CALLBACK);
 
     // REVERSE_MOTION
-    simRegisterScriptCallbackFunction(strConCat(LUA_REVERSE_MOTION_COMMAND,"@","RRS1"),strConCat("int status=",LUA_REVERSE_MOTION_COMMAND,"(bitstring2 rcsHandle,real distance)"),LUA_REVERSE_MOTION_CALLBACK);
+    simRegisterScriptCallbackFunction(strConCat(LUA_REVERSE_MOTION_COMMAND,"@","RRS1"),strConCat("int status=",LUA_REVERSE_MOTION_COMMAND,"(buffer rcsHandle,float distance)"),LUA_REVERSE_MOTION_CALLBACK);
 
     // SET_PAYLOAD_PARAMETER
-    simRegisterScriptCallbackFunction(strConCat(LUA_SET_PAYLOAD_PARAMETER_COMMAND,"@","RRS1"),strConCat("int status=",LUA_SET_PAYLOAD_PARAMETER_COMMAND,"(bitstring2 rcsHandle,int storage,string frameId,int paramNumber,real paramValue)"),LUA_SET_PAYLOAD_PARAMETER_CALLBACK);
+    simRegisterScriptCallbackFunction(strConCat(LUA_SET_PAYLOAD_PARAMETER_COMMAND,"@","RRS1"),strConCat("int status=",LUA_SET_PAYLOAD_PARAMETER_COMMAND,"(buffer rcsHandle,int storage,string frameId,int paramNumber,float paramValue)"),LUA_SET_PAYLOAD_PARAMETER_CALLBACK);
 
     // SELECT_TIME_COMPENSATION
-    simRegisterScriptCallbackFunction(strConCat(LUA_SELECT_TIME_COMPENSATION_COMMAND,"@","RRS1"),strConCat("int status=",LUA_SELECT_TIME_COMPENSATION_COMMAND,"(bitstring2 rcsHandle,bitstring compensation)"),LUA_SELECT_TIME_COMPENSATION_CALLBACK);
+    simRegisterScriptCallbackFunction(strConCat(LUA_SELECT_TIME_COMPENSATION_COMMAND,"@","RRS1"),strConCat("int status=",LUA_SELECT_TIME_COMPENSATION_COMMAND,"(buffer rcsHandle,buffer compensation)"),LUA_SELECT_TIME_COMPENSATION_CALLBACK);
 
     // SET_CONFIGURATION_CONTROL
-    simRegisterScriptCallbackFunction(strConCat(LUA_SET_CONFIGURATION_CONTROL_COMMAND,"@","RRS1"),strConCat("int status=",LUA_SET_CONFIGURATION_CONTROL_COMMAND,"(bitstring2 rcsHandle,string paramId,string paramContents)"),LUA_SET_CONFIGURATION_CONTROL_CALLBACK);
+    simRegisterScriptCallbackFunction(strConCat(LUA_SET_CONFIGURATION_CONTROL_COMMAND,"@","RRS1"),strConCat("int status=",LUA_SET_CONFIGURATION_CONTROL_COMMAND,"(buffer rcsHandle,string paramId,string paramContents)"),LUA_SET_CONFIGURATION_CONTROL_CALLBACK);
 
     // SET_JOINT_SPEEDS
-    simRegisterScriptCallbackFunction(strConCat(LUA_SET_JOINT_SPEEDS_COMMAND,"@","RRS1"),strConCat("int status=",LUA_SET_JOINT_SPEEDS_COMMAND,"(bitstring2 rcsHandle,int allJointFlags,bitstring jointFlags,real_32 speedPercent)"),LUA_SET_JOINT_SPEEDS_CALLBACK);
+    simRegisterScriptCallbackFunction(strConCat(LUA_SET_JOINT_SPEEDS_COMMAND,"@","RRS1"),strConCat("int status=",LUA_SET_JOINT_SPEEDS_COMMAND,"(buffer rcsHandle,int allJointFlags,buffer jointFlags,float[32] speedPercent)"),LUA_SET_JOINT_SPEEDS_CALLBACK);
 
     // SET_CARTESIAN_POSITION_SPEED
-    simRegisterScriptCallbackFunction(strConCat(LUA_SET_CARTESIAN_POSITION_SPEED_COMMAND,"@","RRS1"),strConCat("int status=",LUA_SET_CARTESIAN_POSITION_SPEED_COMMAND,"(bitstring2 rcsHandle,real speedValue)"),LUA_SET_CARTESIAN_POSITION_SPEED_CALLBACK);
+    simRegisterScriptCallbackFunction(strConCat(LUA_SET_CARTESIAN_POSITION_SPEED_COMMAND,"@","RRS1"),strConCat("int status=",LUA_SET_CARTESIAN_POSITION_SPEED_COMMAND,"(buffer rcsHandle,float speedValue)"),LUA_SET_CARTESIAN_POSITION_SPEED_CALLBACK);
 
     // SET_CARTESIAN_ORIENTATION_SPEED
-    simRegisterScriptCallbackFunction(strConCat(LUA_SET_CARTESIAN_ORIENTATION_SPEED_COMMAND,"@","RRS1"),strConCat("int status=",LUA_SET_CARTESIAN_ORIENTATION_SPEED_COMMAND,"(bitstring2 rcsHandle,int rotationNo,real speedValue)"),LUA_SET_CARTESIAN_ORIENTATION_SPEED_CALLBACK);
+    simRegisterScriptCallbackFunction(strConCat(LUA_SET_CARTESIAN_ORIENTATION_SPEED_COMMAND,"@","RRS1"),strConCat("int status=",LUA_SET_CARTESIAN_ORIENTATION_SPEED_COMMAND,"(buffer rcsHandle,int rotationNo,float speedValue)"),LUA_SET_CARTESIAN_ORIENTATION_SPEED_CALLBACK);
 
     // SET_JOINT_ACCELERATIONS
-    simRegisterScriptCallbackFunction(strConCat(LUA_SET_JOINT_ACCELERATIONS_COMMAND,"@","RRS1"),strConCat("int status=",LUA_SET_JOINT_ACCELERATIONS_COMMAND,"(bitstring2 rcsHandle,int allJointFlags,bitstring jointFlags,real_32 accelPercent,int accelType)"),LUA_SET_JOINT_ACCELERATIONS_CALLBACK);
+    simRegisterScriptCallbackFunction(strConCat(LUA_SET_JOINT_ACCELERATIONS_COMMAND,"@","RRS1"),strConCat("int status=",LUA_SET_JOINT_ACCELERATIONS_COMMAND,"(buffer rcsHandle,int allJointFlags,buffer jointFlags,float[32] accelPercent,int accelType)"),LUA_SET_JOINT_ACCELERATIONS_CALLBACK);
 
     // SET_CARTESIAN_POSITION_ACCELERATION
-    simRegisterScriptCallbackFunction(strConCat(LUA_SET_CARTESIAN_POSITION_ACCELERATION_COMMAND,"@","RRS1"),strConCat("int status=",LUA_SET_CARTESIAN_POSITION_ACCELERATION_COMMAND,"(bitstring2 rcsHandle,real accelValue,int accelType)"),LUA_SET_CARTESIAN_POSITION_ACCELERATION_CALLBACK);
+    simRegisterScriptCallbackFunction(strConCat(LUA_SET_CARTESIAN_POSITION_ACCELERATION_COMMAND,"@","RRS1"),strConCat("int status=",LUA_SET_CARTESIAN_POSITION_ACCELERATION_COMMAND,"(buffer rcsHandle,float accelValue,int accelType)"),LUA_SET_CARTESIAN_POSITION_ACCELERATION_CALLBACK);
 
     // SET_CARTESIAN_ORIENTATION_ACCELERATION
-    simRegisterScriptCallbackFunction(strConCat(LUA_SET_CARTESIAN_ORIENTATION_ACCELERATION_COMMAND,"@","RRS1"),strConCat("int status=",LUA_SET_CARTESIAN_ORIENTATION_ACCELERATION_COMMAND,"(bitstring2 rcsHandle,int rotationNo,real accelValue,int accelType)"),LUA_SET_CARTESIAN_ORIENTATION_ACCELERATION_CALLBACK);
+    simRegisterScriptCallbackFunction(strConCat(LUA_SET_CARTESIAN_ORIENTATION_ACCELERATION_COMMAND,"@","RRS1"),strConCat("int status=",LUA_SET_CARTESIAN_ORIENTATION_ACCELERATION_COMMAND,"(buffer rcsHandle,int rotationNo,float accelValue,int accelType)"),LUA_SET_CARTESIAN_ORIENTATION_ACCELERATION_CALLBACK);
 
     // SET_JOINT_JERKS
-    simRegisterScriptCallbackFunction(strConCat(LUA_SET_JOINT_JERKS_COMMAND,"@","RRS1"),strConCat("int status=",LUA_SET_JOINT_JERKS_COMMAND,"(bitstring2 rcsHandle,int allJointFlags,bitstring jointFlags,real_32 jerkPercent,int jerkType)"),LUA_SET_JOINT_JERKS_CALLBACK);
+    simRegisterScriptCallbackFunction(strConCat(LUA_SET_JOINT_JERKS_COMMAND,"@","RRS1"),strConCat("int status=",LUA_SET_JOINT_JERKS_COMMAND,"(buffer rcsHandle,int allJointFlags,buffer jointFlags,float[32] jerkPercent,int jerkType)"),LUA_SET_JOINT_JERKS_CALLBACK);
 
     // SET_MOTION_TIME
-    simRegisterScriptCallbackFunction(strConCat(LUA_SET_MOTION_TIME_COMMAND,"@","RRS1"),strConCat("int status=",LUA_SET_MOTION_TIME_COMMAND,"(bitstring2 rcsHandle,real timeValue)"),LUA_SET_MOTION_TIME_CALLBACK);
+    simRegisterScriptCallbackFunction(strConCat(LUA_SET_MOTION_TIME_COMMAND,"@","RRS1"),strConCat("int status=",LUA_SET_MOTION_TIME_COMMAND,"(buffer rcsHandle,float timeValue)"),LUA_SET_MOTION_TIME_CALLBACK);
 
     // SET_OVERRIDE_SPEED
-    simRegisterScriptCallbackFunction(strConCat(LUA_SET_OVERRIDE_SPEED_COMMAND,"@","RRS1"),strConCat("int status=",LUA_SET_OVERRIDE_SPEED_COMMAND,"(bitstring2 rcsHandle,real correctionValue,int correctionType)"),LUA_SET_OVERRIDE_SPEED_CALLBACK);
+    simRegisterScriptCallbackFunction(strConCat(LUA_SET_OVERRIDE_SPEED_COMMAND,"@","RRS1"),strConCat("int status=",LUA_SET_OVERRIDE_SPEED_COMMAND,"(buffer rcsHandle,float correctionValue,int correctionType)"),LUA_SET_OVERRIDE_SPEED_CALLBACK);
 
     // SET_OVERRIDE_ACCELERATION
-    simRegisterScriptCallbackFunction(strConCat(LUA_SET_OVERRIDE_ACCELERATION_COMMAND,"@","RRS1"),strConCat("int status=",LUA_SET_OVERRIDE_ACCELERATION_COMMAND,"(bitstring2 rcsHandle,real correctionValue,int accelType,int correctionType)"),LUA_SET_OVERRIDE_ACCELERATION_CALLBACK);
+    simRegisterScriptCallbackFunction(strConCat(LUA_SET_OVERRIDE_ACCELERATION_COMMAND,"@","RRS1"),strConCat("int status=",LUA_SET_OVERRIDE_ACCELERATION_COMMAND,"(buffer rcsHandle,float correctionValue,int accelType,int correctionType)"),LUA_SET_OVERRIDE_ACCELERATION_CALLBACK);
 
     // SELECT_FLYBY_MODE
-    simRegisterScriptCallbackFunction(strConCat(LUA_SELECT_FLYBY_MODE_COMMAND,"@","RRS1"),strConCat("int status=",LUA_SELECT_FLYBY_MODE_COMMAND,"(bitstring2 rcsHandle,int flyByOn)"),LUA_SELECT_FLYBY_MODE_CALLBACK);
+    simRegisterScriptCallbackFunction(strConCat(LUA_SELECT_FLYBY_MODE_COMMAND,"@","RRS1"),strConCat("int status=",LUA_SELECT_FLYBY_MODE_COMMAND,"(buffer rcsHandle,int flyByOn)"),LUA_SELECT_FLYBY_MODE_CALLBACK);
 
     // SET_FLYBY_CRITERIA_PARAMETER
-    simRegisterScriptCallbackFunction(strConCat(LUA_SET_FLYBY_CRITERIA_PARAMETER_COMMAND,"@","RRS1"),strConCat("int status=",LUA_SET_FLYBY_CRITERIA_PARAMETER_COMMAND,"(bitstring2 rcsHandle,int paramNumber,int jointNr,real paramValue)"),LUA_SET_FLYBY_CRITERIA_PARAMETER_CALLBACK);
+    simRegisterScriptCallbackFunction(strConCat(LUA_SET_FLYBY_CRITERIA_PARAMETER_COMMAND,"@","RRS1"),strConCat("int status=",LUA_SET_FLYBY_CRITERIA_PARAMETER_COMMAND,"(buffer rcsHandle,int paramNumber,int jointNr,float paramValue)"),LUA_SET_FLYBY_CRITERIA_PARAMETER_CALLBACK);
 
     // SELECT_FLYBY_CRITERIA
-    simRegisterScriptCallbackFunction(strConCat(LUA_SELECT_FLYBY_CRITERIA_COMMAND,"@","RRS1"),strConCat("int status=",LUA_SELECT_FLYBY_CRITERIA_COMMAND,"(bitstring2 rcsHandle,int paramNumber)"),LUA_SELECT_FLYBY_CRITERIA_CALLBACK);
+    simRegisterScriptCallbackFunction(strConCat(LUA_SELECT_FLYBY_CRITERIA_COMMAND,"@","RRS1"),strConCat("int status=",LUA_SELECT_FLYBY_CRITERIA_COMMAND,"(buffer rcsHandle,int paramNumber)"),LUA_SELECT_FLYBY_CRITERIA_CALLBACK);
 
     // CANCEL_FLYBY_CRITERIA
-    simRegisterScriptCallbackFunction(strConCat(LUA_CANCEL_FLYBY_CRITERIA_COMMAND,"@","RRS1"),strConCat("int status=",LUA_CANCEL_FLYBY_CRITERIA_COMMAND,"(bitstring2 rcsHandle,int paramNumber)"),LUA_CANCEL_FLYBY_CRITERIA_CALLBACK);
+    simRegisterScriptCallbackFunction(strConCat(LUA_CANCEL_FLYBY_CRITERIA_COMMAND,"@","RRS1"),strConCat("int status=",LUA_CANCEL_FLYBY_CRITERIA_COMMAND,"(buffer rcsHandle,int paramNumber)"),LUA_CANCEL_FLYBY_CRITERIA_CALLBACK);
 
     // SELECT_POINT_ACCURACY
-    simRegisterScriptCallbackFunction(strConCat(LUA_SELECT_POINT_ACCURACY_COMMAND,"@","RRS1"),strConCat("int status=",LUA_SELECT_POINT_ACCURACY_COMMAND,"(bitstring2 rcsHandle,int accuracyType)"),LUA_SELECT_POINT_ACCURACY_CALLBACK);
+    simRegisterScriptCallbackFunction(strConCat(LUA_SELECT_POINT_ACCURACY_COMMAND,"@","RRS1"),strConCat("int status=",LUA_SELECT_POINT_ACCURACY_COMMAND,"(buffer rcsHandle,int accuracyType)"),LUA_SELECT_POINT_ACCURACY_CALLBACK);
 
     // SET_POINT_ACCURACY_PARAMETER
-    simRegisterScriptCallbackFunction(strConCat(LUA_SET_POINT_ACCURACY_PARAMETER_COMMAND,"@","RRS1"),strConCat("int status=",LUA_SET_POINT_ACCURACY_PARAMETER_COMMAND,"(bitstring2 rcsHandle,int accuracyType,real accuracyValue)"),LUA_SET_POINT_ACCURACY_PARAMETER_CALLBACK);
+    simRegisterScriptCallbackFunction(strConCat(LUA_SET_POINT_ACCURACY_PARAMETER_COMMAND,"@","RRS1"),strConCat("int status=",LUA_SET_POINT_ACCURACY_PARAMETER_COMMAND,"(buffer rcsHandle,int accuracyType,float accuracyValue)"),LUA_SET_POINT_ACCURACY_PARAMETER_CALLBACK);
 
     // SET_REST_PARAMETER
-    simRegisterScriptCallbackFunction(strConCat(LUA_SET_REST_PARAMETER_COMMAND,"@","RRS1"),strConCat("int status=",LUA_SET_REST_PARAMETER_COMMAND,"(bitstring2 rcsHandle,int paramNumber,real paramValue)"),LUA_SET_REST_PARAMETER_CALLBACK);
+    simRegisterScriptCallbackFunction(strConCat(LUA_SET_REST_PARAMETER_COMMAND,"@","RRS1"),strConCat("int status=",LUA_SET_REST_PARAMETER_COMMAND,"(buffer rcsHandle,int paramNumber,float paramValue)"),LUA_SET_REST_PARAMETER_CALLBACK);
 
     // GET_CURRENT_TARGETID
-    simRegisterScriptCallbackFunction(strConCat(LUA_GET_CURRENT_TARGETID_COMMAND,"@","RRS1"),strConCat("int status,int targetId=",LUA_GET_CURRENT_TARGETID_COMMAND,"(bitstring2 rcsHandle)"),LUA_GET_CURRENT_TARGETID_CALLBACK);
+    simRegisterScriptCallbackFunction(strConCat(LUA_GET_CURRENT_TARGETID_COMMAND,"@","RRS1"),strConCat("int status,int targetId=",LUA_GET_CURRENT_TARGETID_COMMAND,"(buffer rcsHandle)"),LUA_GET_CURRENT_TARGETID_CALLBACK);
 
     // SELECT_TRACKING
-    simRegisterScriptCallbackFunction(strConCat(LUA_SELECT_TRACKING_COMMAND,"@","RRS1"),strConCat("int status=",LUA_SELECT_TRACKING_COMMAND,"(bitstring2 rcsHandle,bitstring conveyorFlags)"),LUA_SELECT_TRACKING_CALLBACK);
+    simRegisterScriptCallbackFunction(strConCat(LUA_SELECT_TRACKING_COMMAND,"@","RRS1"),strConCat("int status=",LUA_SELECT_TRACKING_COMMAND,"(buffer rcsHandle,buffer conveyorFlags)"),LUA_SELECT_TRACKING_CALLBACK);
 
     // SET_CONVEYOR_POSITION
-    simRegisterScriptCallbackFunction(strConCat(LUA_SET_CONVEYOR_POSITION_COMMAND,"@","RRS1"),strConCat("int status=",LUA_SET_CONVEYOR_POSITION_COMMAND,"(bitstring2 rcsHandle,bitstring inputFormat,bitstring conveyorFlags,real_32 conveyorPos)"),LUA_SET_CONVEYOR_POSITION_CALLBACK);
+    simRegisterScriptCallbackFunction(strConCat(LUA_SET_CONVEYOR_POSITION_COMMAND,"@","RRS1"),strConCat("int status=",LUA_SET_CONVEYOR_POSITION_COMMAND,"(buffer rcsHandle,buffer inputFormat,buffer conveyorFlags,float[32] conveyorPos)"),LUA_SET_CONVEYOR_POSITION_CALLBACK);
 
     // DEFINE_EVENT
-    simRegisterScriptCallbackFunction(strConCat(LUA_DEFINE_EVENT_COMMAND,"@","RRS1"),strConCat("int status=",LUA_DEFINE_EVENT_COMMAND,"(bitstring2 rcsHandle,int eventId,int targetId,real resolution,int typeOfEvent,real_16 eventSpec)"),LUA_DEFINE_EVENT_CALLBACK);
+    simRegisterScriptCallbackFunction(strConCat(LUA_DEFINE_EVENT_COMMAND,"@","RRS1"),strConCat("int status=",LUA_DEFINE_EVENT_COMMAND,"(buffer rcsHandle,int eventId,int targetId,float resolution,int typeOfEvent,float[16] eventSpec)"),LUA_DEFINE_EVENT_CALLBACK);
 
     // CANCEL_EVENT
-    simRegisterScriptCallbackFunction(strConCat(LUA_CANCEL_EVENT_COMMAND,"@","RRS1"),strConCat("int status=",LUA_CANCEL_EVENT_COMMAND,"(bitstring2 rcsHandle,int eventId)"),LUA_CANCEL_EVENT_CALLBACK);
+    simRegisterScriptCallbackFunction(strConCat(LUA_CANCEL_EVENT_COMMAND,"@","RRS1"),strConCat("int status=",LUA_CANCEL_EVENT_COMMAND,"(buffer rcsHandle,int eventId)"),LUA_CANCEL_EVENT_CALLBACK);
 
     // GET_EVENT
-    simRegisterScriptCallbackFunction(strConCat(LUA_GET_EVENT_COMMAND,"@","RRS1"),strConCat("int status,int eventId,real timeTillEvent=",LUA_GET_EVENT_COMMAND,"(bitstring2 rcsHandle,int eventNumber)"),LUA_GET_EVENT_CALLBACK);
+    simRegisterScriptCallbackFunction(strConCat(LUA_GET_EVENT_COMMAND,"@","RRS1"),strConCat("int status,int eventId,float timeTillEvent=",LUA_GET_EVENT_COMMAND,"(buffer rcsHandle,int eventNumber)"),LUA_GET_EVENT_CALLBACK);
 
     // STOP_MOTION
-    simRegisterScriptCallbackFunction(strConCat(LUA_STOP_MOTION_COMMAND,"@","RRS1"),strConCat("int status=",LUA_STOP_MOTION_COMMAND,"(bitstring2 rcsHandle)"),LUA_STOP_MOTION_CALLBACK);
+    simRegisterScriptCallbackFunction(strConCat(LUA_STOP_MOTION_COMMAND,"@","RRS1"),strConCat("int status=",LUA_STOP_MOTION_COMMAND,"(buffer rcsHandle)"),LUA_STOP_MOTION_CALLBACK);
 
     // CONTINUE_MOTION
-    simRegisterScriptCallbackFunction(strConCat(LUA_CONTINUE_MOTION_COMMAND,"@","RRS1"),strConCat("int status=",LUA_CONTINUE_MOTION_COMMAND,"(bitstring2 rcsHandle)"),LUA_CONTINUE_MOTION_CALLBACK);
+    simRegisterScriptCallbackFunction(strConCat(LUA_CONTINUE_MOTION_COMMAND,"@","RRS1"),strConCat("int status=",LUA_CONTINUE_MOTION_COMMAND,"(buffer rcsHandle)"),LUA_CONTINUE_MOTION_CALLBACK);
 
     // CANCEL_MOTION
-    simRegisterScriptCallbackFunction(strConCat(LUA_CANCEL_MOTION_COMMAND,"@","RRS1"),strConCat("int status=",LUA_CANCEL_MOTION_COMMAND,"(bitstring2 rcsHandle)"),LUA_CANCEL_MOTION_CALLBACK);
+    simRegisterScriptCallbackFunction(strConCat(LUA_CANCEL_MOTION_COMMAND,"@","RRS1"),strConCat("int status=",LUA_CANCEL_MOTION_COMMAND,"(buffer rcsHandle)"),LUA_CANCEL_MOTION_CALLBACK);
 
     // GET_MESSAGE
-    simRegisterScriptCallbackFunction(strConCat(LUA_GET_MESSAGE_COMMAND,"@","RRS1"),strConCat("int status,int severity,string text=",LUA_GET_MESSAGE_COMMAND,"(bitstring2 rcsHandle,int messageNumber)"),LUA_GET_MESSAGE_CALLBACK);
+    simRegisterScriptCallbackFunction(strConCat(LUA_GET_MESSAGE_COMMAND,"@","RRS1"),strConCat("int status,int severity,string text=",LUA_GET_MESSAGE_COMMAND,"(buffer rcsHandle,int messageNumber)"),LUA_GET_MESSAGE_CALLBACK);
 
     // SELECT_WEAVING_MODE
-    simRegisterScriptCallbackFunction(strConCat(LUA_SELECT_WEAVING_MODE_COMMAND,"@","RRS1"),strConCat("int status=",LUA_SELECT_WEAVING_MODE_COMMAND,"(bitstring2 rcsHandle,int weavingMode)"),LUA_SELECT_WEAVING_MODE_CALLBACK);
+    simRegisterScriptCallbackFunction(strConCat(LUA_SELECT_WEAVING_MODE_COMMAND,"@","RRS1"),strConCat("int status=",LUA_SELECT_WEAVING_MODE_COMMAND,"(buffer rcsHandle,int weavingMode)"),LUA_SELECT_WEAVING_MODE_CALLBACK);
 
     // SELECT_WEAVING_GROUP
-    simRegisterScriptCallbackFunction(strConCat(LUA_SELECT_WEAVING_GROUP_COMMAND,"@","RRS1"),strConCat("int status=",LUA_SELECT_WEAVING_GROUP_COMMAND,"(bitstring2 rcsHandle,int groupNo,int groupOn)"),LUA_SELECT_WEAVING_GROUP_CALLBACK);
+    simRegisterScriptCallbackFunction(strConCat(LUA_SELECT_WEAVING_GROUP_COMMAND,"@","RRS1"),strConCat("int status=",LUA_SELECT_WEAVING_GROUP_COMMAND,"(buffer rcsHandle,int groupNo,int groupOn)"),LUA_SELECT_WEAVING_GROUP_CALLBACK);
 
     // SET_WEAVING_GROUP_PARAMETER
-    simRegisterScriptCallbackFunction(strConCat(LUA_SET_WEAVING_GROUP_PARAMETER_COMMAND,"@","RRS1"),strConCat("int status=",LUA_SET_WEAVING_GROUP_PARAMETER_COMMAND,"(bitstring2 rcsHandle,int groupNo,int paramNo,real paramValue)"),LUA_SET_WEAVING_GROUP_PARAMETER_CALLBACK);
+    simRegisterScriptCallbackFunction(strConCat(LUA_SET_WEAVING_GROUP_PARAMETER_COMMAND,"@","RRS1"),strConCat("int status=",LUA_SET_WEAVING_GROUP_PARAMETER_COMMAND,"(buffer rcsHandle,int groupNo,int paramNo,float paramValue)"),LUA_SET_WEAVING_GROUP_PARAMETER_CALLBACK);
 
     // DEBUG
-    simRegisterScriptCallbackFunction(strConCat(LUA_DEBUG_COMMAND,"@","RRS1"),strConCat("int status=",LUA_DEBUG_COMMAND,"(bitstring2 rcsHandle,bitstring debugFlags,int opcodeSelect,string logFileName)"),LUA_DEBUG_CALLBACK);
+    simRegisterScriptCallbackFunction(strConCat(LUA_DEBUG_COMMAND,"@","RRS1"),strConCat("int status=",LUA_DEBUG_COMMAND,"(buffer rcsHandle,buffer debugFlags,int opcodeSelect,string logFileName)"),LUA_DEBUG_CALLBACK);
 
     // EXTENDED_SERVICE
-    simRegisterScriptCallbackFunction(strConCat(LUA_EXTENDED_SERVICE_COMMAND,"@","RRS1"),strConCat("int status,string outData=",LUA_EXTENDED_SERVICE_COMMAND,"(bitstring2 rcsHandle,string inData)"),LUA_EXTENDED_SERVICE_CALLBACK);
+    simRegisterScriptCallbackFunction(strConCat(LUA_EXTENDED_SERVICE_COMMAND,"@","RRS1"),strConCat("int status,string outData=",LUA_EXTENDED_SERVICE_COMMAND,"(buffer rcsHandle,string inData)"),LUA_EXTENDED_SERVICE_CALLBACK);
 
     // Following for backward compatibility:
     simRegisterScriptVariable(LUA_START_RCS_SERVER_COMMANDOLD,LUA_START_RCS_SERVER_COMMAND,-1);
