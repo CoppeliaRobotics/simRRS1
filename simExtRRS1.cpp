@@ -4706,7 +4706,7 @@ SIM_DLLEXPORT unsigned char simStart(void* reservedPointer,int reservedInt)
     simRegisterScriptCallbackFunction(strConCat(LUA_GET_INVERSE_KINEMATIC_COMMAND,"@","RRS1"),strConCat("int status,buffer jointPos,buffer jointLimit,int numberOfMessages=",LUA_GET_INVERSE_KINEMATIC_COMMAND,"(buffer rcsHandle,buffer cartPos,buffer jointPos,string configuration,buffer outputFormat)"),LUA_GET_INVERSE_KINEMATIC_CALLBACK);
 
     // GET_FORWARD_KINEMATIC
-    simRegisterScriptCallbackFunction(strConCat(LUA_GET_FORWARD_KINEMATIC_COMMAND,"@","RRS1"),strConCat("int status,buffer cartPos,buffer jointPos,string configuration,bitString jointLimit,int numberOfMessages=",LUA_GET_FORWARD_KINEMATIC_COMMAND,"(buffer rcsHandle,buffer jointPos)"),LUA_GET_FORWARD_KINEMATIC_CALLBACK);
+    simRegisterScriptCallbackFunction(strConCat(LUA_GET_FORWARD_KINEMATIC_COMMAND,"@","RRS1"),strConCat("int status,buffer cartPos,buffer jointPos,string configuration,buffer jointLimit,int numberOfMessages=",LUA_GET_FORWARD_KINEMATIC_COMMAND,"(buffer rcsHandle,buffer jointPos)"),LUA_GET_FORWARD_KINEMATIC_CALLBACK);
 
     // MATRIX_TO_CONTROLLER_POSITION
     simRegisterScriptCallbackFunction(strConCat(LUA_MATRIX_TO_CONTROLLER_POSITION_COMMAND,"@","RRS1"),strConCat("int status,string contrPos=",LUA_MATRIX_TO_CONTROLLER_POSITION_COMMAND,"(buffer rcsHandle,buffer cartPos,string configuration)"),LUA_MATRIX_TO_CONTROLLER_POSITION_CALLBACK);
