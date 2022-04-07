@@ -4715,10 +4715,10 @@ SIM_DLLEXPORT unsigned char simStart(void* reservedPointer,int reservedInt)
     simRegisterScriptCallbackFunction(strConCat(LUA_CONTROLLER_POSITION_TO_MATRIX_COMMAND,"@","RRS1"),strConCat("int status,buffer cartPos,string configuration=",LUA_CONTROLLER_POSITION_TO_MATRIX_COMMAND,"(buffer rcsHandle,string contrPos)"),LUA_CONTROLLER_POSITION_TO_MATRIX_CALLBACK);
 
     // GET_CELL_FRAME
-    simRegisterScriptCallbackFunction(strConCat(LUA_GET_CELL_FRAME_COMMAND,"@","RRS1"),strConCat("int status,string frameId,int frameType,string relativeToId,buffer jointNumber,frame frameData=",LUA_GET_CELL_FRAME_COMMAND,"(buffer rcsHandle,int storage,int firstNext,string frameId)"),LUA_GET_CELL_FRAME_CALLBACK);
+    simRegisterScriptCallbackFunction(strConCat(LUA_GET_CELL_FRAME_COMMAND,"@","RRS1"),strConCat("int status,string frameId,int frameType,string relativeToId,buffer jointNumber,buffer frameData=",LUA_GET_CELL_FRAME_COMMAND,"(buffer rcsHandle,int storage,int firstNext,string frameId)"),LUA_GET_CELL_FRAME_CALLBACK);
 
     // MODIFY_CELL_FRAME
-    simRegisterScriptCallbackFunction(strConCat(LUA_MODIFY_CELL_FRAME_COMMAND,"@","RRS1"),strConCat("int status=",LUA_MODIFY_CELL_FRAME_COMMAND,"(buffer rcsHandle,int storage,string frameId,frame frameData)"),LUA_MODIFY_CELL_FRAME_CALLBACK);
+    simRegisterScriptCallbackFunction(strConCat(LUA_MODIFY_CELL_FRAME_COMMAND,"@","RRS1"),strConCat("int status=",LUA_MODIFY_CELL_FRAME_COMMAND,"(buffer rcsHandle,int storage,string frameId,buffer frameData)"),LUA_MODIFY_CELL_FRAME_CALLBACK);
 
     // SELECT_WORK_FRAMES
     simRegisterScriptCallbackFunction(strConCat(LUA_SELECT_WORK_FRAMES_COMMAND,"@","RRS1"),strConCat("int status=",LUA_SELECT_WORK_FRAMES_COMMAND,"(buffer rcsHandle,string toolId,string objectId)"),LUA_SELECT_WORK_FRAMES_CALLBACK);
@@ -4757,7 +4757,7 @@ SIM_DLLEXPORT unsigned char simStart(void* reservedPointer,int reservedInt)
     simRegisterScriptCallbackFunction(strConCat(LUA_SET_MOTION_FILTER_COMMAND,"@","RRS1"),strConCat("int status=",LUA_SET_MOTION_FILTER_COMMAND,"(buffer rcsHandle,int filterFactor)"),LUA_SET_MOTION_FILTER_CALLBACK);
 
     // SET_OVERRIDE_POSITION
-    simRegisterScriptCallbackFunction(strConCat(LUA_SET_OVERRIDE_POSITION_COMMAND,"@","RRS1"),strConCat("int status=",LUA_SET_OVERRIDE_POSITION_COMMAND,"(buffer rcsHandle,frame posOffset)"),LUA_SET_OVERRIDE_POSITION_CALLBACK);
+    simRegisterScriptCallbackFunction(strConCat(LUA_SET_OVERRIDE_POSITION_COMMAND,"@","RRS1"),strConCat("int status=",LUA_SET_OVERRIDE_POSITION_COMMAND,"(buffer rcsHandle,buffer posOffset)"),LUA_SET_OVERRIDE_POSITION_CALLBACK);
 
     // REVERSE_MOTION
     simRegisterScriptCallbackFunction(strConCat(LUA_REVERSE_MOTION_COMMAND,"@","RRS1"),strConCat("int status=",LUA_REVERSE_MOTION_COMMAND,"(buffer rcsHandle,float distance)"),LUA_REVERSE_MOTION_CALLBACK);
