@@ -5016,8 +5016,8 @@ SIM_DLLEXPORT void* simMessage(int message,int* auxiliaryData,void* customData,i
 { // This is called quite often. Just watch out for messages/events you want to handle
     // Keep following 5 lines at the beginning and unchanged:
     int errorModeSaved;
-    simGetIntegerParameter(sim_intparam_error_report_mode,&errorModeSaved);
-    simSetIntegerParameter(sim_intparam_error_report_mode,sim_api_errormessage_ignore);
+    simGetInt32Param(sim_intparam_error_report_mode,&errorModeSaved);
+    simSetInt32Param(sim_intparam_error_report_mode,sim_api_errormessage_ignore);
     void* retVal=NULL;
 
     if (message==sim_message_eventcallback_simulationended)
@@ -5029,7 +5029,7 @@ SIM_DLLEXPORT void* simMessage(int message,int* auxiliaryData,void* customData,i
 
 
     // Keep following unchanged:
-    simSetIntegerParameter(sim_intparam_error_report_mode,errorModeSaved);
+    simSetInt32Param(sim_intparam_error_report_mode,errorModeSaved);
     return(retVal);
 }
 
