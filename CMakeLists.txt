@@ -23,8 +23,8 @@ coppeliasim_add_plugin(
     SOURCES
     simExtRRS1.cpp
     inputOutputBlock.cpp
-    ${COPPELIASIM_COMMON_DIR}/scriptFunctionData.cpp
-    ${COPPELIASIM_COMMON_DIR}/scriptFunctionDataItem.cpp
-    ${COPPELIASIM_COMMON_DIR}/socketOutConnection.cpp
+    ${COPPELIASIM_INCLUDE_DIR}/scriptFunctionData.cpp
+    ${COPPELIASIM_INCLUDE_DIR}/scriptFunctionDataItem.cpp
+    ${COPPELIASIM_INCLUDE_DIR}/socketOutConnection.cpp
 )
 target_link_libraries(simExtRRS1 Qt5::Core)
