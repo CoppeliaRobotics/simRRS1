@@ -53,10 +53,10 @@ unix:!macx {
 }
 
 SOURCES += \
-    ../common/socketOutConnection.cpp \
-    ../common/scriptFunctionData.cpp \
-    ../common/scriptFunctionDataItem.cpp \
-    ../common/simLib.cpp \
+    ../include/socketOutConnection.cpp \
+    ../include/scriptFunctionData.cpp \
+    ../include/scriptFunctionDataItem.cpp \
+    ../include/simLib.cpp \
     inputOutputBlock.cpp \
     simExtRRS1.cpp
 

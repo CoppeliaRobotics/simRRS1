@@ -1,7 +1,7 @@
 #include "simExtRRS1.h"
-#include "simLib.h"
-#include "scriptFunctionData.h"
-#include "socketOutConnection.h"
+#include <simLib.h>
+#include <scriptFunctionData.h>
+#include <socketOutConnection.h>
 #include "inputOutputBlock.h"
 #include <iostream>
 #include <boost/lexical_cast.hpp>
