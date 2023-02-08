@@ -53,18 +53,18 @@ unix:!macx {
 }
 
 SOURCES += \
-    ../include/socketOutConnection.cpp \
-    ../include/scriptFunctionData.cpp \
-    ../include/scriptFunctionDataItem.cpp \
-    ../include/simLib.cpp \
+    ../include/simLib/socketOutConnection.cpp \
+    ../include/simLib/scriptFunctionData.cpp \
+    ../include/simLib/scriptFunctionDataItem.cpp \
+    ../include/simLib/simLib.cpp \
     inputOutputBlock.cpp \
     simExtRRS1.cpp
 
 HEADERS +=\
-    ../include/socketOutConnection.h \
-    ../include/scriptFunctionData.h \
-    ../include/scriptFunctionDataItem.h \
-    ../include/simLib.h \
+    ../include/simLib/socketOutConnection.h \
+    ../include/simLib/scriptFunctionData.h \
+    ../include/simLib/scriptFunctionDataItem.h \
+    ../include/simLib/simLib.h \
     inputOutputBlock.h \
     simExtRRS1.h
 
