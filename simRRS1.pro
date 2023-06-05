@@ -3,7 +3,7 @@ include(config.pri)
 #QT -= core #core needed because of QProcess::startDetached
 QT -= gui
 
-TARGET = simExtRRS1
+TARGET = simRRS1
 TEMPLATE = lib
 
 DEFINES -= UNICODE
@@ -59,7 +59,7 @@ SOURCES += \
     ../include/simLib/scriptFunctionDataItem.cpp \
     ../include/simLib/simLib.cpp \
     inputOutputBlock.cpp \
-    simExtRRS1.cpp
+    simRRS1.cpp
 
 HEADERS +=\
     ../include/simLib/socketOutConnection.h \
@@ -67,7 +67,7 @@ HEADERS +=\
     ../include/simLib/scriptFunctionDataItem.h \
     ../include/simLib/simLib.h \
     inputOutputBlock.h \
-    simExtRRS1.h
+    simRRS1.h
 
 unix:!symbian {
     maemo5 {

@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.15)
-project(simExtRRS1)
+project(simRRS1)
 
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
 set(CMAKE_MACOSX_RPATH 1)
@@ -18,13 +18,15 @@ list(APPEND CMAKE_MODULE_PATH ${COPPELIASIM_INCLUDE_DIR}/cmake)
 find_package(CoppeliaSim 4.5.0.0 REQUIRED)
 
 coppeliasim_add_plugin(
-    simExtRRS1
+    simRRS1
     LEGACY
     SOURCES
-    simExtRRS1.cpp
+    simRRS1.cpp
     inputOutputBlock.cpp
     ${COPPELIASIM_INCLUDE_DIR}/simLib/scriptFunctionData.cpp
     ${COPPELIASIM_INCLUDE_DIR}/simLib/scriptFunctionDataItem.cpp
     ${COPPELIASIM_INCLUDE_DIR}/simLib/socketOutConnection.cpp
 )
-target_link_libraries(simExtRRS1 Qt5::Core)
+target_link_libraries(simRRS1 Qt5::Core)
+coppeliasim_add_lua(simRRS1.lua)
+coppeliasim_add_lua(simRRS1-ce.lua)
