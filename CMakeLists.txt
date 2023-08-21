@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.15)
+cmake_minimum_required(VERSION 3.16.3)
 project(simRRS1)
 
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
@@ -27,6 +27,6 @@ coppeliasim_add_plugin(
     ${COPPELIASIM_INCLUDE_DIR}/simLib/scriptFunctionDataItem.cpp
     ${COPPELIASIM_INCLUDE_DIR}/simLib/socketOutConnection.cpp
 )
-target_link_libraries(simRRS1 Qt5::Core)
+target_link_libraries(simRRS1 PRIVATE Qt5::Core)
 coppeliasim_add_lua(simRRS1.lua)
 coppeliasim_add_lua(simRRS1-ce.lua)
