@@ -1,3 +1,3 @@
-local simRRS1=loadPlugin('simRRS1')
+local simRRS1 = loadPlugin('simRRS1');
 
 return simRRS1
