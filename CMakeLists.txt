@@ -21,12 +21,12 @@ coppeliasim_add_plugin(
     simRRS1
     LEGACY
     SOURCES
-    simRRS1.cpp
-    inputOutputBlock.cpp
+    sourceCode/simRRS1.cpp
+    sourceCode/inputOutputBlock.cpp
     ${COPPELIASIM_INCLUDE_DIR}/simLib/scriptFunctionData.cpp
     ${COPPELIASIM_INCLUDE_DIR}/simLib/scriptFunctionDataItem.cpp
     ${COPPELIASIM_INCLUDE_DIR}/simLib/socketOutConnection.cpp
 )
 target_link_libraries(simRRS1 PRIVATE Qt5::Core)
-coppeliasim_add_lua(simRRS1.lua)
-coppeliasim_add_lua(simRRS1-ce.lua)
+coppeliasim_add_lua(lua/simRRS1.lua)
+coppeliasim_add_lua(lua/simRRS1-ce.lua)
