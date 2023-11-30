@@ -58,16 +58,16 @@ SOURCES += \
     ../include/simLib/scriptFunctionData.cpp \
     ../include/simLib/scriptFunctionDataItem.cpp \
     ../include/simLib/simLib.cpp \
-    inputOutputBlock.cpp \
-    simRRS1.cpp
+    sourceCode/inputOutputBlock.cpp \
+    sourceCode/simRRS1.cpp
 
 HEADERS +=\
     ../include/simLib/socketOutConnection.h \
     ../include/simLib/scriptFunctionData.h \
     ../include/simLib/scriptFunctionDataItem.h \
     ../include/simLib/simLib.h \
-    inputOutputBlock.h \
-    simRRS1.h
+    sourceCode/inputOutputBlock.h \
+    sourceCode/simRRS1.h
 
 unix:!symbian {
     maemo5 {
