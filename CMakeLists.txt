@@ -5,7 +5,10 @@ set(CMAKE_INCLUDE_CURRENT_DIR ON)
 set(CMAKE_MACOSX_RPATH 1)
 
 find_package(Boost REQUIRED)
-find_package(Qt5 COMPONENTS Core REQUIRED)
+
+set(Qt Qt5 CACHE STRING "Qt version to use (e.g. Qt5)")
+set_property(CACHE Qt PROPERTY STRINGS Qt5 Qt6)
+find_package(${Qt} COMPONENTS Core REQUIRED)
 
 if(NOT COPPELIASIM_INCLUDE_DIR)
     if(DEFINED ENV{COPPELIASIM_ROOT_DIR})
@@ -27,6 +30,6 @@ coppeliasim_add_plugin(
     ${COPPELIASIM_INCLUDE_DIR}/simLib/scriptFunctionDataItem.cpp
     ${COPPELIASIM_INCLUDE_DIR}/simLib/socketOutConnection.cpp
 )
-target_link_libraries(simRRS1 PRIVATE Qt5::Core)
+target_link_libraries(simRRS1 PRIVATE ${Qt}::Core)
 coppeliasim_add_lua(lua/simRRS1.lua)
 coppeliasim_add_lua(lua/simRRS1-ce.lua)
