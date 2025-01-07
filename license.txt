@@ -8,7 +8,7 @@ under the same terms of the files in the parent directory otherwise.
 simRRS1, based on v_repExtRRS1 from Coppelia Robotics AG
 on September 2019
 
-Copyright (C) 2015-2024 Coppelia Robotics AG
+Copyright (C) 2015-2025 Coppelia Robotics AG
 Copyright (C) 2019 Robot Nordic ApS
 
 All rights reserved.
